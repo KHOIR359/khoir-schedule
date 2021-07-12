@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "khoir",
-    "slug": "khoir",
+    "name": "Khoir PJJ Schedule",
+    "slug": "khoir-pjj-schedule",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -23,10 +23,12 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "khoir.apk"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": "test"
   }
 }
