@@ -6,9 +6,7 @@ import scheduleFile from '../../assets/schedule.json';
 import ScheduleBox from '../../component/scheduleBox.js'
 import TodayBox from '../../component/todayBox.js'
 import MainHeader from '../../component/main/mainHeader.js'
-import { firstOpen } from '../../db/conn'
 
-firstOpen()
 
 
 function MainScreen({ navigation }) {
