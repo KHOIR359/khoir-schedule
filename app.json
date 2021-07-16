@@ -1,34 +1,35 @@
 {
-  "expo": {
-    "name": "Khoir PJJ Schedule",
-    "slug": "khoir-pjj-schedule",
-    "version": "1.0.0",
-    "orientation": "portrait",
-    "icon": "./assets/icon.png",
-    "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
-    "updates": {
-      "fallbackToCacheTimeout": 0
-    },
-    "assetBundlePatterns": [
+    "expo": {
+        "name": "Khoir PJJ Schedule",
+        "slug": "khoir-pjj-schedule",
+        "version": "1.0.0",
+        "orientation": "portrait",
+        "icon": "./assets/icon.png",
+        "splash": {
+            "image": "./assets/splash.png",
+            "resizeMode": "contain",
+            "backgroundColor": "#ffffff"
+        },
+        "updates": {
+            "fallbackToCacheTimeout": 0
+        },
+        "assetBundlePatterns": [
       "**/*"
     ],
-    "ios": {
-      "supportsTablet": true
-    },
-    "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
-      },
-      "package": "khoir.apk"
-    },
-    "web": {
-      "favicon": "./assets/favicon.png"
-    },
-    "description": "test"
-  }
+        "ios": {
+            "supportsTablet": true
+        },
+        "android": {
+            "adaptiveIcon": {
+                "foregroundImage": "./assets/adaptive-icon.png",
+                "backgroundColor": "#FFFFFF"
+            },
+            "package": "khoir.apk"
+        },
+        "web": {
+            "favicon": "./assets/favicon.png"
+        },
+        "description": "test"
+
+    }
 }

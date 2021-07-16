@@ -7,24 +7,24 @@
     "subjects": [
       {
         "no": 1,
-        "name": "Matematika",
+        "name": "PEND. AGAMA",
         "from": "07:00",
         "to": "08:10",
-        "teacher": "Bu Porman"
+        "teacher": "AHMAD"
       },
       {
         "no": 2,
-        "name": "Biologi",
+        "name": "EKONOMI",
         "from": "08:40",
         "to": "09:50",
-        "teacher": "Pak Budi"
+        "teacher": "ENDAH"
       },
       {
         "no": 3,
-        "name": "BK",
+        "name": "GEOGRAFI",
         "from": "10:20",
         "to": "11:30",
-        "teacher": "Pak Zein"
+        "teacher": "SRI M"
       }
     ]
   },
@@ -36,24 +36,24 @@
     "subjects": [
       {
         "no": 1,
-        "name": "BHS Jepang",
+        "name": "SOSIOLOGI",
         "from": "07:00",
         "to": "08:10",
-        "teacher": "Bu Ratih"
+        "teacher": "RATIH TS"
       },
       {
         "no": 2,
-        "name": "Fisika",
+        "name": "BHS. JPG_LM",
         "from": "08:40",
         "to": "09:50",
-        "teacher": "Pak Auliya"
+        "teacher": "RATIH BU"
       },
       {
         "no": 3,
-        "name": "PKWU",
+        "name": "BK",
         "from": "10:20",
         "to": "11:30",
-        "teacher": "Bu Suci"
+        "teacher": "RATNA SARI"
       }
     ]
   },
@@ -65,24 +65,24 @@
     "subjects": [
       {
         "no": 1,
-        "name": "PPKN",
+        "name": "BHS  INGG WAJIB",
         "from": "07:00",
         "to": "08:10",
-        "teacher": "Pak Hasan"
+        "teacher": "MAYA"
       },
       {
         "no": 2,
-        "name": "Agama",
+        "name": "SEJARAH WAJIB",
         "from": "08:40",
         "to": "09:50",
-        "teacher": "Pak Ahmad/Bu Ratna"
+        "teacher": "DINNAH"
       },
       {
         "no": 3,
-        "name": "BHS Indo",
+        "name": "PJOK",
         "from": "10:20",
         "to": "11:30",
-        "teacher": "Bu Salbi"
+        "teacher": "UMAR"
       }
     ]
   },
@@ -94,24 +94,24 @@
     "subjects": [
       {
         "no": 1,
-        "name": "PJOK",
+        "name": "PPKN",
         "from": "07:00",
         "to": "08:10",
-        "teacher": "Pak Umar"
+        "teacher": "HASAN"
       },
       {
         "no": 2,
-        "name": "Seni Budaya",
+        "name": "MATH",
         "from": "08:40",
         "to": "09:50",
-        "teacher": "Bu Sumi"
+        "teacher": "MAYA"
       },
       {
         "no": 3,
-        "name": "Mat Minat",
+        "name": "SENI BUDAYA",
         "from": "10:20",
         "to": "11:30",
-        "teacher": "Pak Rahmat"
+        "teacher": "SUMI"
       }
     ]
   },
@@ -123,24 +123,24 @@
     "subjects": [
       {
         "no": 1,
-        "name": "BHS Inggris",
+        "name": "PKWU",
         "from": "07:00",
         "to": "08:10",
-        "teacher": "Bu Maya"
+        "teacher": "KRESNA"
       },
       {
         "no": 2,
-        "name": "Kimia",
+        "name": "PEND. AGAMA",
         "from": "08:40",
         "to": "09:50",
-        "teacher": "Bu Riza"
+        "teacher": "AHMAD / RATNA"
       },
       {
         "no": 3,
-        "name": "Sejarah",
+        "name": "SEJARAH MINAT",
         "from": "10:20",
         "to": "11:30",
-        "teacher": "Bu Dinnah"
+        "teacher": "JAMIL"
       }
     ]
   },

@@ -3,9 +3,11 @@ import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import scheduleFile from './../assets/schedule.json';
 import { today } from '../global/global';
 import { MaterialIcons } from '@expo/vector-icons';
+import { resStyle } from '../global/global';
 function dayText(str) {
   return str.toUpperCase().slice(0, 3);
 }
+
 
 
 function LiburText() {
@@ -56,36 +58,39 @@ const styles = StyleSheet.create({
     borderColor: '#555'
   },
   todaySubjectContainer: {
-    marginTop: 10,
+    marginTop: resStyle.v10,
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'center',
-    paddingBottom: 20
+    paddingBottom: resStyle.v20
   },
   todaySubjectBox: {
-    width: 150,
-    height: 70,
+    width: resStyle.v150,
+    // width: 150,
+    height: resStyle.v75,
     alignItems: 'center',
     justifyContent: 'center'
   },
   todayDuration: {
-    fontSize: 14,
+    // fontSize: 14,
+    fontSize: resStyle.v10,
     textAlign: 'center',
     color: '#555'
   },
   todaySubject: {
-    fontSize: 20,
+    fontSize: resStyle.v20,
     fontWeight: '700',
     textAlign: 'center',
     color: '#444'
   },
   todayTeacher: {
     textAlign: 'center',
+    fontSize: resStyle.v10
 
   },
   todayContainer: {
     borderRadius: 10,
-    paddingVertical: 5,
+    paddingVertical: resStyle.v5,
     borderWidth: 1,
     borderTopColor: '#eee',
     borderRightWidth: 3,
@@ -93,37 +98,29 @@ const styles = StyleSheet.create({
     borderLeftWidth: 3,
     borderRightColor: '#0277df',
     borderLeftColor: '#0277df',
-    marginBottom: 30,
-    minWidth: '90%',
+    marginBottom: resStyle.v30,
     backgroundColor: 'white',
     elevation: 3,
-
-  },
-  todayTitle: {
-    textAlign: 'center',
-    fontSize: 30,
-    color: '#0277df',
-    fontWeight: '700',
-    marginBottom: 10,
   },
   dayText: {
-    fontSize: 30,
+    fontSize: resStyle.v30,
     color: '#e64a19',
     textAlign: 'center',
-    marginBottom: 5
+    marginBottom: resStyle.v5
   },
   scheduleContainer: {
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   libur: {
-    fontSize: 40,
+    fontSize: resStyle.v30,
     color: 'red',
     textAlign: 'center'
   },
   detail: {
     textAlign: 'center',
     color: '#aaa',
-    paddingBottom: 10,
+    paddingBottom: resStyle.v2,
+    fontSize: resStyle.v10,
   }
 })

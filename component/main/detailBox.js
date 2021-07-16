@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import { getHours, getMinutes, getSeconds } from '../../global/global';
-import scheduleFile from './../../assets/schedule.json';
 import { MaterialIcons } from '@expo/vector-icons';
+import { resStyle } from '../../global/global';
 function dayText(str) {
   return str.toUpperCase().slice(0, 3);
 }
@@ -84,8 +84,6 @@ export default function DetailBox({ navigation, schedule }) {
 
         }
       }
-
-
     }
 
     function bgSuccessText() {
@@ -94,7 +92,7 @@ export default function DetailBox({ navigation, schedule }) {
       } else if (now > timeto) {
         return { color: 'black' }
       } else if (now < timefrom) {
-        return { color: 'black' }
+        return { color: 'white' }
       } else {
         return {
           color: 'black'
@@ -109,7 +107,7 @@ export default function DetailBox({ navigation, schedule }) {
             <Text style={[styles.teacher, bgSuccessText()]}>{subject.teacher}</Text>
           </View>
           <View>
-            <Text style={[styles.duration, bgSuccessText]}>
+            <Text style={[styles.duration, bgSuccessText()]}>
               {subject.from} - {subject.to}
             </Text>
           </View>
@@ -157,8 +155,9 @@ const styles = StyleSheet.create({
     width: '92%',
     justifyContent: 'space-between',
     flexDirection: 'row',
-    height: 500,
-    borderRadius: 10,
+    height: resStyle.h500,
+    paddingBottom: resStyle.v10,
+    borderRadius: resStyle.v10,
   },
   subjectContainer: {
     width: '90%',
@@ -166,26 +165,26 @@ const styles = StyleSheet.create({
   subjectBox: {
     backgroundColor: 'white',
     elevation: 3,
-    padding: 10,
+    padding: resStyle.v10,
     flex: 7,
-    borderRadius: 10
+    borderRadius: 10,
   },
   subjectText: {
-    fontSize: 20
+    fontSize: resStyle.v20
   },
   teacher: {
-    fontSize: 16
+    fontSize: resStyle.v15,
   },
   duration: {
-    fontSize: 30,
+    fontSize: resStyle.v30,
     alignSelf: 'flex-end'
   },
   break: {
-    padding: 10,
+    padding: resStyle.v10,
     flex: 3
   },
   breakText: {
-    fontSize: 20
+    fontSize: resStyle.v20,
   },
   sliderContainer: {
     width: '8%',
@@ -194,13 +193,13 @@ const styles = StyleSheet.create({
   slider: {
     width: '100%',
     backgroundColor: '#0277df',
-    borderTopEndRadius: 10,
-    borderBottomEndRadius: 10,
+    borderTopEndRadius: resStyle.v10,
+    borderBottomEndRadius: resStyle.v10,
   },
   time: {
-    fontSize: 30,
+    fontSize: resStyle.v30,
     textAlign: 'center',
-    marginTop: 10,
+    marginTop: resStyle.v10,
     color: 'white'
   },
   row: {
@@ -208,21 +207,22 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between'
   },
   progressBar2Container: {
-    height: 20,
+    height: resStyle.v20,
     width: '100%',
-    marginTop: 15,
-    borderRadius: 10,
+    marginTop: resStyle.v15,
+    borderRadius: resStyle.v10,
     backgroundColor: '#eee',
   },
   progressBar2: {
-    height: 20,
+    height: resStyle.v20,
     width: '10%',
-    borderRadius: 10,
+    borderRadius: resStyle.v10,
 
     backgroundColor: '#0277df',
   },
   progressBar2Text: {
     color: 'white',
-    marginLeft: 10,
+    fontSize: resStyle.v10,
+    marginLeft: resStyle.v10,
   }
 })

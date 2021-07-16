@@ -1,12 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState, useEffect } from 'react';
-import { ImageBackground, StyleSheet, Text, View, Image, Button, TextInput, TouchableHighlight, TouchableOpacity } from "react-native";
+import { ImageBackground, StyleSheet, Text, View, Image, Button, TextInput, TouchableHighlight, TouchableOpacity, ScrollView } from "react-native";
 import { MaterialIcons } from '@expo/vector-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-
-
-
-
+import * as ImagePicker from 'expo-image-picker';
+import { resStyle } from '../../global/global';
 
 function UserScreen(props) {
   let [name, setName] = useState('')
@@ -27,73 +25,99 @@ function UserScreen(props) {
       setClassInfo(item)
       setNewClassInfo(item)
     })
+    AsyncStorage.getItem('image').then((item) => {
+      setImage(item);
+    })
   }
 
   function updateProfile() {
     AsyncStorage.setItem('username', newName)
     AsyncStorage.setItem('classinfo', newClassInfo)
+
     updateState()
   }
 
-  function handleImage() {
+  async function handleImage() {
+    let result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ImagePicker.MediaTypeOptions.All,
+      allowsEditing: true,
+      aspect: [4, 3],
+      quality: 1,
+    });
 
+    console.log(result);
+
+    if (!result.cancelled) {
+      setImage(result.uri);
+      AsyncStorage.setItem('image', result.uri)
+      updateState()
+    }
   }
 
   return (
     <View style={styles.background}>
       <StatusBar hidden />
-      <View style={styles.heroSection}>
-        <View style={styles.heroContainer}>
-          <TouchableOpacity onPress={handleImage}>
-            <Image style={styles.heroImage} source={image || require('../../assets/profile.jpg')} />
-          </TouchableOpacity>
+      <ScrollView style={styles.scroll}>
+        <View style={{ width: '100%', justifyContent: 'center', alignItems: 'center', paddingBottom: 10, }}>
+          <View style={styles.heroSection}>
+            <View style={styles.heroContainer}>
+              <TouchableOpacity onPress={handleImage}>
+                <Image style={styles.heroImage} source={image ? { uri: image } : require('../../assets/profile.jpg')} />
+              </TouchableOpacity>
 
-          <View style={styles.heroStatus}>
-            <Text style={styles.heroName}>{name}</Text>
-            <Text style={styles.statusText}>{classInfo}</Text>
+              <View style={styles.heroStatus}>
+                <Text style={styles.heroName}>{name}</Text>
+                <Text style={styles.statusText}>{classInfo}</Text>
+              </View>
+            </View>
+          </View>
+
+          <View style={styles.container}>
+            <View style={styles.formContainer}>
+              <View style={styles.formGroup}>
+
+                <Text style={styles.label}>Name: </Text>
+                <TextInput autoCorrect={false} placeholder='Nama' style={styles.input}
+                  onChangeText={(text) => setNewName(text)}
+                  value={newName} />
+              </View>
+              {/* <View style={styles.formGroup}>
+                <Text style={styles.label}>Class: </Text>
+                <TextInput  autoCorrect={false} placeholder='Kelas' style={styles.input}
+                  onChangeText={(text) => setNewClassInfo(text)}
+                  value={newClassInfo} />
+              </View> */}
+              <View style={styles.formGroup}>
+                <TouchableHighlight onPress={updateProfile}>
+                  <Text style={styles.button}>Submit</Text>
+                </TouchableHighlight>
+              </View>
+            </View>
           </View>
         </View>
-      </View>
-
-      <View style={styles.container}>
-        <View style={styles.formContainer}>
-          <View style={styles.formGroup}>
-
-            <Text style={styles.label}>Name: </Text>
-            <TextInput autoCorrect={false} placeholder='Nama' style={styles.input}
-              onChangeText={(text) => setNewName(text)}
-              value={newName} />
-          </View>
-          <View style={styles.formGroup}>
-            <Text style={styles.label}>Class: </Text>
-            <TextInput autoCorrect={false} placeholder='Kelas' style={styles.input}
-              onChangeText={(text) => setNewClassInfo(text)}
-              value={newClassInfo} />
-          </View>
-          <View style={styles.formGroup}>
-            <TouchableHighlight onPress={updateProfile}>
-              <Text style={styles.button}>Submit</Text>
-            </TouchableHighlight>
-          </View>
-        </View>
-      </View>
+      </ScrollView>
     </View >
   )
 
 }
 
 const styles = StyleSheet.create({
+  scroll: {
+    width: '100%',
+
+    paddingBottom: 10,
+  },
   background: {
     flex: 1,
     display: "flex",
-    paddingTop: 20,
+    paddingTop: resStyle.v20,
     alignItems: 'center',
   },
   heroSection: {
-    borderRadius: 10,
+    borderRadius: resStyle.v10,
     backgroundColor: 'white',
     width: '90%',
-    padding: 5,
+    padding: resStyle.v5,
     elevation: 3,
     // overflow: 'hidden',
   },
@@ -102,13 +126,14 @@ const styles = StyleSheet.create({
   },
   heroImage: {
     width: '100%',
-    borderRadius: 10,
-    height: 280,
+    borderRadius: resStyle.v10,
+    // height: 280,
+    height: resStyle.h280,
     borderWidth: 2,
     borderColor: '#ddd',
   },
   heroName: {
-    fontSize: 25,
+    fontSize: resStyle.v25,
     textAlign: 'center',
     fontWeight: 'bold',
   },
@@ -117,37 +142,40 @@ const styles = StyleSheet.create({
   },
   container: {
     width: '90%',
-    marginTop: 10,
+    marginTop: resStyle.v10,
   },
   formContainer: {
     backgroundColor: 'white',
     elevation: 3,
-    padding: 20
+    borderRadius: resStyle.v10,
+    padding: resStyle.v20,
   },
   formGroup: {
-    marginVertical: 10
+    marginVertical: resStyle.v10,
   },
   input: {
     borderWidth: 1,
-    borderColor: '#eee',
+    borderColor: '#ccc',
     backgroundColor: '#ddd',
-    padding: 2,
-    paddingHorizontal: 10,
-    borderRadius: 10,
+    color: '#333',
+    padding: resStyle.v2,
+    paddingHorizontal: resStyle.v10,
+    borderRadius: resStyle.v10,
+    fontSize: resStyle.v15,
     width: '100%',
 
   },
   label: {
-    fontSize: 18,
-    marginBottom: 10
+    fontSize: resStyle.v18,
+    marginBottom: resStyle.v10,
   },
   button: {
-    padding: 5,
-    paddingHorizontal: 10,
+    padding: resStyle.v5,
+    paddingHorizontal: resStyle.v10,
     backgroundColor: 'green',
     color: 'white',
     textAlign: 'center',
-    borderRadius: 10,
+    borderRadius: resStyle.v10,
   }
 })
 export default UserScreen;

@@ -3,13 +3,8 @@ import * as React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import Header from '../shared/header';
 import DetailScreen from '../screens/main/detail';
+import { headerOptions } from '../global/global';
 
-const headerOptions = {
-  headerTintColor: "white",
-  headerStyle: {
-    backgroundColor: "#0277fa"
-  }
-}
 
 const Stack = createStackNavigator();
 import Main from '../screens/main/main';

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import scheduleFile from './../assets/schedule.json';
 import { today } from '../global/global';
+import { resStyle } from '../global/global';
 function dayText(str) {
   return str.toUpperCase().slice(0, 3);
 }
@@ -101,29 +102,28 @@ const styles = StyleSheet.create({
     borderColor: '#aaa',
     borderTopWidth: 1,
     borderBottomWidth: 1,
-    marginVertical: 7,
-    height: 90,
+    marginVertical: resStyle.v10,
+    height: resStyle.h90,
     alignContent: 'center',
     justifyContent: 'center'
   },
   subjectContainer: {
-    marginTop: 10,
     flexDirection: 'column',
     flexWrap: 'wrap',
     justifyContent: 'center',
-
   },
   subjectBox: {
-    width: 150,
-    height: 70,
+    marginVertical: resStyle.v5,
+    width: resStyle.v150,
+    height: resStyle.h75,
   },
   duration: {
-    fontSize: 14,
+    fontSize: resStyle.v15,
     textAlign: 'center',
     color: '#555'
   },
   subject: {
-    fontSize: 20,
+    fontSize: resStyle.v20,
     textAlign: 'center',
     color: '#444',
     fontWeight: '700',
@@ -131,24 +131,26 @@ const styles = StyleSheet.create({
   },
   teacher: {
     textAlign: 'center',
+    fontSize: resStyle.v15
+
 
   },
   title: {
     textAlign: 'center',
-    fontSize: 30,
+    fontSize: resStyle.v30,
     color: '#0277df',
     fontWeight: '700',
-    marginBottom: 10,
+    marginBottom: resStyle.v10,
   },
   scheduleTitle: {
-    marginBottom: 10,
+    marginBottom: resStyle.v10,
     textAlign: 'center',
-    fontSize: 30,
+    fontSize: resStyle.v30,
     color: '#0277df',
     fontWeight: '700'
   },
   dayText: {
-    fontSize: 30,
+    fontSize: resStyle.v30,
     color: '#e64a19',
     textAlign: 'center',
     marginBottom: 5
@@ -162,28 +164,29 @@ const styles = StyleSheet.create({
   scheduleBox: {
     elevation: 3,
     backgroundColor: '#fefefe',
-    margin: 10,
+    margin: resStyle.v10,
     padding: 5,
-    paddingBottom: 20,
-    borderRadius: 10,
+    paddingBottom: resStyle.v20,
+    borderRadius: resStyle.v10,
     borderTopColor: '#0277df',
     borderColor: '#fefefe',
     borderTopWidth: 3,
     borderRightWidth: 1,
-    paddingBottom: 20,
-    paddingHorizontal: 20,
-    height: 320,
-    minWidth: 220
+    paddingBottom: resStyle.v20,
+    paddingHorizontal: resStyle.v20,
+    minHeight: resStyle.h320,
+    // height: 320,
+    minWidth: resStyle.v220
   },
   libur: {
-    fontSize: 40,
+    fontSize: resStyle.v40,
     color: 'red',
     textAlign: 'center'
   },
   liburContainer: {
     justifyContent: 'center',
     alignItems: 'center',
-    height: '80%',
+    height: resStyle.h200,
   }
 
 })

@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import scheduleFile from './../../assets/schedule.json';
 import { today } from '../../global/global';
 import { getHours, getMinutes, getSeconds } from '../../global/global';
+import { resStyle } from '../../global/global';
 
 export default function ClockBox({ navigation }) {
   let [seconds, setSecond] = useState(getSeconds());
@@ -62,33 +63,33 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   timeBox: {
-    height: 80,
-    width: 80,
+    height: resStyle.v80,
+    width: resStyle.v80,
     // elevation: 1,
     backgroundColor: 'white',
-    borderRadius: 10,
+    borderRadius: resStyle.v10,
     // borderColor: '#eee',
     // borderWidth: 1,
-    marginHorizontal: 5,
+    marginHorizontal: resStyle.v5,
     alignItems: 'center',
     justifyContent: 'center'
   },
   timeText: {
     textAlign: 'center',
-    fontSize: 40
+    fontSize: resStyle.v40,
   },
   timeName: {
     textAlign: 'center',
-    fontSize: 14,
+    fontSize: resStyle.v15,
     fontWeight: 'bold',
     color: '#0277df'
   },
   dayName: {
     color: '#0277df',
-    fontSize: 35,
-    marginBottom: 10,
+    fontSize: resStyle.v40,
+    marginBottom: resStyle.v10,
     fontWeight: 'bold',
-    marginLeft: 5,
+    marginLeft: resStyle.v5,
     textTransform: 'capitalize',
     textAlign: 'center',
 

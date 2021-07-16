@@ -3,7 +3,6 @@
 // import React, { useState, useEffect } from 'react'
 // import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 // import { getHours, getMinutes, getSeconds } from '../../global/global';
-// import scheduleFile from './../../assets/schedule.json';
 // import { MaterialIcons } from '@expo/vector-icons';
 // function dayText(str) {
 //   return str.toUpperCase().slice(0, 3);

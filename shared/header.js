@@ -1,7 +1,7 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import { MaterialIcons } from '@expo/vector-icons'
-
+import { resStyle } from '../global/global'
 export default function Header({ navigation, title }) {
   const openMenu = () => {
     navigation.openDrawer()
@@ -26,8 +26,8 @@ const styles = StyleSheet.create({
   },
   headerText: {
     fontWeight: 'bold',
-    fontSize: 20,
     color: '#eee',
+    fontSize: resStyle.v20,
     letterSpacing: 1
   },
   icon: {

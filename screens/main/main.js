@@ -1,8 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, ScrollView, } from "react-native";
-import { MaterialIcons } from '@expo/vector-icons';
-import scheduleFile from '../../assets/schedule.json';
 import ScheduleBox from '../../component/scheduleBox.js'
 import TodayBox from '../../component/todayBox.js'
 import MainHeader from '../../component/main/mainHeader.js'

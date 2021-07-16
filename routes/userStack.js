@@ -4,14 +4,8 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Header from '../shared/header';
 const Stack = createStackNavigator();
 import User from '../screens/user/user';
+import { headerOptions } from '../global/global';
 
-const headerOptions = {
-  headerTintColor: "white",
-  headerStyle: {
-    backgroundColor: "#0277fa",
-    elevation: 0,
-  }
-}
 
 export default function UserStack(props) {
 

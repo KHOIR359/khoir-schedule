@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import { StyleSheet, Text, View, TouchableWithoutFeedback, } from "react-native";
+import { StyleSheet, Text, View, TouchableWithoutFeedback, Dimensions } from "react-native";
 import { MaterialIcons } from '@expo/vector-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { resStyle } from '../../global/global';
 export default function MainHeader({ navigation }) {
   const [name, setName] = useState('')
   const [classInfo, setClassInfo] = useState('')
@@ -9,9 +10,11 @@ export default function MainHeader({ navigation }) {
   useEffect(() => {
     let interval = setInterval(() => {
       updateState()
+      return () => { clearInterval(interval) }
     }, 1000)
 
   }, [])
+
   function updateState() {
     AsyncStorage.getItem('username').then((item) => {
       setName(item)
@@ -33,16 +36,16 @@ export default function MainHeader({ navigation }) {
       <View style={styles.iconContainer}>
         {/* <Image source={require('../assets/icon.png')} style={styles.heroIcon}></Image> */}
 
-        <Text style={styles.month}>{month}</Text>
-        <Text style={styles.date}>{date}</Text>
-        <Text style={styles.year}>{year}</Text>
+        <Text style={styles.month} allowFontScaling={true}>{month}</Text>
+        <Text style={styles.date} allowFontScaling={true}>{date}</Text>
+        <Text style={styles.year} allowFontScaling={true}>{year}</Text>
       </View>
       <View style={styles.textContainer}>
         <Text style={styles.name}>{name}</Text>
         <Text style={styles.class}>{classInfo}</Text>
         <TouchableWithoutFeedback onPress={() => { navigation.navigate('User') }} >
           <Text style={styles.editButton}>
-            <MaterialIcons name="edit" />
+            <MaterialIcons name="edit" style={styles.editButton} />
 
             &nbsp;Edit Profile</Text>
         </TouchableWithoutFeedback>
@@ -54,32 +57,32 @@ export default function MainHeader({ navigation }) {
 
 const styles = StyleSheet.create({
   mainContainer: {
-    margin: 20,
     flexDirection: 'row',
     borderWidth: 1,
-    borderRadius: 10,
+    borderRadius: resStyle.v10,
     borderColor: '#eee',
     shadowColor: 'black',
     elevation: 2,
-    margin: 20,
-    paddingHorizontal: 20,
-    paddingVertical: 10,
+    margin: resStyle.v10,
+    paddingHorizontal: resStyle.v30,
+    width: '90%',
+    alignSelf: 'center',
+    paddingVertical: resStyle.v10,
     backgroundColor: 'white',
   },
   iconContainer: {
     backgroundColor: '#0277df',
-    flex: -1,
-    marginRight: 10,
-    width: 150,
+    marginRight: resStyle.v10,
+    width: resStyle.v150,
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: 20,
-    padding: 10,
-    height: 150,
+    borderRadius: resStyle.v20,
+    padding: resStyle.v10,
+    height: resStyle.v150,
   },
   month: {
     fontWeight: 'bold',
-    fontSize: 20,
+    fontSize: resStyle.v20,
     color: 'white',
     includeFontPadding: false,
     padding: 0,
@@ -87,14 +90,14 @@ const styles = StyleSheet.create({
   },
   day: {
     fontWeight: 'bold',
-    fontSize: 20,
+    fontSize: resStyle.v20,
     color: 'white',
     includeFontPadding: false,
     padding: 0,
     margin: 0,
   },
   date: {
-    fontSize: 75,
+    fontSize: resStyle.v75,
     fontWeight: 'bold',
     color: 'white',
     includeFontPadding: false,
@@ -106,11 +109,11 @@ const styles = StyleSheet.create({
     includeFontPadding: false,
     padding: 0,
     margin: 0,
-    fontSize: 20,
+    fontSize: resStyle.v20,
   },
   heroIcon: {
-    width: 150,
-    height: 150,
+    width: resStyle.v150,
+    height: resStyle.v150,
     overflow: 'hidden',
     backgroundColor: 'white',
     borderRadius: 150 / 2,
@@ -118,30 +121,30 @@ const styles = StyleSheet.create({
     borderColor: '#004c8c',
   },
   textContainer: {
-    paddingTop: 10,
-    paddingLeft: 10,
+    paddingTop: resStyle.v10,
+    paddingLeft: resStyle.v10,
     alignItems: 'flex-start',
     justifyContent: 'flex-start'
 
   },
   name: {
-    fontSize: 30,
+    fontSize: resStyle.v40,
     flex: -1,
     color: '#444',
     fontWeight: 'bold'
   },
   class: {
-    fontSize: 15,
+    fontSize: resStyle.v20,
     flex: -1,
     color: '#555',
   },
   editButton: {
     backgroundColor: '#5ee019',
-    padding: 2,
     color: 'white',
     borderRadius: 5,
-    paddingHorizontal: 10,
-    marginTop: 10,
-    padding: 10
+    fontSize: resStyle.v10,
+    paddingHorizontal: resStyle.v10,
+    marginTop: resStyle.v10,
+    padding: resStyle.v10,
   },
 })
